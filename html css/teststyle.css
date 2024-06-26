@@ -1,0 +1,43 @@
+.a 
+{
+    width: 50px;
+    height: 40px;
+    background-color: brown;
+}
+.b
+{
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    /* align-self: flex-start; */
+}
+.c
+{
+    width: 50px;
+    height: 30px;
+    background-color: green;
+}
+.d
+{
+    width: 50px;
+    height: 40px;
+    background-color: yellow;
+}
+.e
+{
+    width: 50px;
+    height: 90px;
+    background-color: purple;
+    align-self: start;
+}
+
+.shape 
+{
+    width: 400px;
+    height: 200px;
+    background-color: aqua;
+    display: flex;
+    /* justify-content:center; */
+     align-items: end;
+
+}
