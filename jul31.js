@@ -107,9 +107,10 @@
 // let raj = new Student(101, "raj", 20, "CSE");
 // console.log(raj);
 
-// https://bit.ly/ZO-300724
+// private members
+// public members
 
-// JS6 Classes
+// ES6 Classes
 class Human {
   constructor(fnamev, agev) {
     this.fname = fnamev;
@@ -117,7 +118,7 @@ class Human {
   }
 
   aboutMe() {
-    console.log(`i am ${this.fname} age is ${this.age}`);
+    console.log(`i am ${this.fname} age is ${this.age} is human`);
   }
 }
 
@@ -126,13 +127,41 @@ Human.prototype.greetMe = function () {
 };
 
 class Student extends Human {
-  constructor(dept, rollv, fnamev, agev) 
-  {
-    super(fnamev, agev); //  
-    this.departmemnt = dept;
+  #skills; // private property
+  constructor(dept, rollv, fnamev, agev) {
+    super(fnamev, agev); //
+    this.departmemnt = dept; // public property
     this.roll = rollv;
+    this.#skills = []; 
+  }
+
+
+  aboutMe()
+  {
+    super.aboutMe();
+    console.
+    log(`i am ${this.fname} age is ${this.age} is student`);
+  }
+
+  //getter and setter
+  getSkill() {
+    return this.#skills;
+  }
+  setSkill(p) {
+    this.#skills.push(p); 
   }
 }
 
 let raj = new Student("ece", 101, "raj", 20);
+raj.setSkill("chess");
+raj.setSkill("HICKET");
+raj.setSkill("VOLLEYBALL");
+raj.aboutMe();
 console.log(raj);
+
+
+
+// polymorphism 
+// method overriding
+
+
