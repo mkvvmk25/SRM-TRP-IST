@@ -62,6 +62,26 @@ app.post("/student/postnew", async function (req, res) {
   console.log(savedDoc);
 });
 
+app.get("/student/all", async function (req, res) {
+  let stus = await studentModel.find();
+  console.log(stus, "---");
+
+  res.json(stus);
+});
+app.get("/student/:name/:roll", async function (req, res) {
+  console.log(req.params);
+  let stus = await studentModel.find({ name: req.params.name });
+  console.log(stus, "---");
+  res.json(stus);
+});
+
+app.put("/student/update/:name", 
+        function(req, res)
+        {
+            studentModel.find
+        }
+)
+
 app.listen(7000, function () {
   console.log("server is active in 7000...");
 });
