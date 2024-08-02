@@ -17,23 +17,22 @@ let studentBluePrint = new mongoose.Schema({
   roll: Number,
   dept: String,
 });
+
 // create collection
-let studentModel = new mongoose.model("stu", studentBluePrint);
+let studentModel = mongoose.model("stu", studentBluePrint);
 
-/* 
-C -> post
-R -> get
-U -> patch/update
-D -> delete
-
+/*
+  C -> post
+  R -> get
+  U -> patch/update
+  D -> delete
 */
+
 // get request
 app.get("/helo", function (req, res) {
   res.status(404);
   res.send(`<h1>hellasdo</h1>`);
 });
-
-
 
 app.get("/", function (req, res) {
   res.send(`<h1>nothing</h1>`);
@@ -48,8 +47,19 @@ app.get("/json", function (req, res) {
 
 // posting --> creating
 app.post("/student/post", function (req, res) {
-  res.json(req.body);
-  console.log(req.body, "-----");
+  // res.json(req.body);
+  // console.log(req.body, "-----");
+  studentModel.create(req.body).then(function (obj) {
+    console.log(obj);
+    res.json(obj);
+  });
+});
+app.post("/student/postnew", async function (req, res) {
+  // res.json(req.body);
+  // console.log(req.body, "-----");
+  let savedDoc = await studentModel.create(req.body);
+  res.json(savedDoc);
+  console.log(savedDoc);
 });
 
 app.listen(7000, function () {
