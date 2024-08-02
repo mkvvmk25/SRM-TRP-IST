@@ -1,0 +1,21 @@
+{
+  "name": "pop",
+  "version": "1.0.0",
+  "description": "lerning",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kumar",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.0.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "node": "^20.16.0",
+    "nodemon": "^3.1.4"
+  }
+}
